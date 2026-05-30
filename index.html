@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Flashcards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>⚡ Dev Flashcards</h1>
+    <p>Tap a card to flip it &mdash; click ✓ or ✗ to track your score</p>
+  </header>
+
+  <!-- Category tabs -->
+  <div class="categories">
+    <button class="cat-btn active" data-cat="javascript">JavaScript</button>
+    <button class="cat-btn" data-cat="git">Git</button>
+    <button class="cat-btn" data-cat="linux">Linux</button>
+    <button class="cat-btn" data-cat="networking">Networking</button>
+    <button class="cat-btn" data-cat="security">Security</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <span>✓ <span id="correct-count" class="stat-correct">0</span> correct</span>
+    <span>✗ <span id="incorrect-count" class="stat-incorrect">0</span> incorrect</span>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-wrap">
+    <div class="progress-track">
+      <div id="progress-bar"></div>
+    </div>
+    <div class="progress-label">
+      <span id="progress">0 / 0</span> cards
+    </div>
+  </div>
+
+  <main>
+    <!-- Card -->
+    <div class="card-scene">
+      <div id="card">
+        <div class="card-face" id="card-front">
+          <span class="face-label">Question</span>
+          <p class="card-text"></p>
+          <span class="card-hint">Click to reveal answer</span>
+        </div>
+        <div class="card-face" id="card-back">
+          <span class="face-label">Answer</span>
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Answer buttons (shown after flip) -->
+    <div class="answer-btns">
+      <button id="btn-correct" class="hidden">✓ Got it</button>
+      <button id="btn-incorrect" class="hidden">✗ Missed it</button>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="btn-shuffle">🔀 Shuffle</button>
+      <button id="btn-reset">↺ Restart</button>
+    </div>
+
+    <!-- Keyboard hint -->
+    <p class="kbd-hint">
+      <kbd>Space</kbd> flip &nbsp;·&nbsp; <kbd>→</kbd> correct &nbsp;·&nbsp; <kbd>←</kbd> incorrect
+    </p>
+
+    <!-- Completion screen -->
+    <div id="completion" class="hidden">
+      <h2>Deck Complete!</h2>
+      <p id="completion-msg"></p>
+      <button id="btn-restart">Try Again</button>
+    </div>
+  </main>
+
+  <script src="cards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
